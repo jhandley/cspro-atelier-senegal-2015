@@ -1,5 +1,9 @@
-﻿Qu’est-ce que CSPro?
-=================
+﻿Introduction
+============
+
+Qu’est-ce que CSPro?
+--------------------
+
 * Système intégré – saisie, apurement, tabulation, diffusion
 * Domaine Publique (gratuit)
 * Windows, Android
@@ -7,7 +11,8 @@
 * Financé par USAID
 
 Modules
-=======
+--------------------
+
 | Tache                          | Module       |
 |--------------------------------|--------------|
 | Structure du Fichier de Données| Dictionnaire |
@@ -19,7 +24,7 @@ Modules
 Pour cet atelier on se concentre sur Dictionnaire et CSEntry
 
 Création de l'Application de Saisie
-===================================
+--------------------
 
 * Lorsqu'on lance CSPro on demande le type d'application à créer.
 	* Choisissez "data entry application" pour les enquêtes sur papier et "CAPI data entry application" pour CAPI.
@@ -62,7 +67,7 @@ Création de l'Application de Saisie
 	* Max: pour les enregistrements a plusieurs occurrences le nombre maximum d'occurrences. Généralement c'est 1 pour les enregistrements qui ne sont pas répétés est un nombre très grands pour les enregistrements répétés. Dans notre exemple c'est 1 pour habitation est 999 pour population.
 * Définir les variables dans les enregistrements
 	* Habitation
-		* No de pièces (numérique longueur 2)
+		* Nombre de pièces (numérique longueur 2)
 		* Nature des murs (numérique longueur 1)
 	* Population
 		* Nom et prénom (alpha, longueur 50)
@@ -71,9 +76,9 @@ Création de l'Application de Saisie
 * Définir les réponses possibles des variables (value sets)
 	L'ensemble de valeurs défini les réponses valides de la variable et les libellés des codes pour des variables codées. Sans ensemble de valeurs on peut entrer n'importe quelle valeur (sauf blanc).
 	* Nombre de pièces: 1 à 20
-	* Nature des murs: 1. Dur 2. Tôle 3. Bois 4. Pisé 5. Feuilles
+	* Nature des mur: (Dur, Tôle, Bois, Pisé ou Feuilles)
 	* Nom et prénom: pas d'ensemble de valeurs
-	* Sexe: 1. Masculin 2. Feminin
+	* Sexe: (Masculin ou Féminin)
 	* Age: 0 à 120
 	* Province: copier du fichier Excel
 	* District, UPS et numéro: revisitons le après
@@ -96,8 +101,8 @@ Création de l'Application de Saisie
 	* Notons les différences entre Windows et Android
 	* Copier le fichier de la tablette sur l'ordinateur
 
-Fichier de Données
-================
+Le Fichier de Données
+--------------------
 * Format texte (UTF8)
 * Chaque ligne est un enregistrement
 * Un enregistrement est compose de plusieurs champs de taille fixe
@@ -105,13 +110,28 @@ Fichier de Données
 * Ouvrir le fichier de données qui nous venons de créer dans TextViewer. 
 	* Identifier les enregistrements population et habitation a partir des record type.
 	* Trouver les valeurs des variables. Marier les postions et longueur dans le dictionnaire avec les colonnes dans le fichier.
+* Ajouter une autre variable à l'enregistrement habitation avant nature des murs: Nombre de pièces pour dormir (1 à 20) 
+* Saisir une autre ménage avec la nouvelle variable.
+* Réouvrir la première ménage. Pourquoi est-ce que la nouvelle variable n'est pas blanc? Regarder dans le fichier de données.
+
+Items et Subitems
+-----------------
+* Ajouter une variable date d'interview de longueur 8 (jour, mois, année)
+* Ajouter les sous-variables de date d'interview:
+	* jour (longueur 2)
+	* mois (longueur 2)
+	* année (longueur 4)
+* Cliquer sur *Layout* dans la barre d'outils pour vérifier que les variables et sous variables occupent la même place 
+* Ajouter les ensembles de valeurs pour les sous-variables. Utiliser "generate value set" pour jour.
+* Glisser-déposer jour, mois et année sur la formulaire et vérifier en faisant la saisie
 
 Exercices
-=========
+--------------------
 * Ajouter les variables suivantes au dictionnaire et à la formulaire:
-	* Nature du toit (1. Béton armé, 2. Béton traditionnel, 3. Tôle, 4. Paille, 5. Autre) 
-	* Nature du sol (1.	Ciment 2. Terre/Gravillon/Sable 3. Carreaux 4. Autre)
-	* Lien de parenté avec le chef de ménage (1. Chef, 2. Épouse, 3. Fils/Fille, 4. Mere/Pere, 5. Autre relation, 6. Sans lien de parenté)
-	* État matrimonial (1. Célibataire 2. Marié(e) 3. Divorcé(e) 4. Veuf/Veuve)
-	* Nombre d'enfants nés vivants (0 à 9)
-* Tester vos additions sur l'ordinateur et ensuite sur Android. Saisir trois ménages.
+	1 Nature du toit, après nature des murs, (Béton armé, Béton traditionnel, Tôle, Paille, ou Autre)
+	2 Statut d'occupation, après nature du toit (Propriétaire, Locataire, Location terre, A titre gracieux, Logement de fonction)
+	3 Montant du loyer, après statut d'occupation, (moins de 25 000, 25 000 - 49 999, 50 000 - 99 999, 100 000 - 199 999, 200 000 ou plus) 
+	4 Lien de parenté avec le chef de ménage (Chef, Époux/Épouse, Fils/Fille, Mère/Père, Autre relation, Sans lien de parenté)
+	5 État matrimonial (Célibataire, Marié(e), Divorcé(e), Veuf/Veuve)
+	6 Nombre d'enfants nés vivants (0 à 12)
+* Tester chacun vos additions sur l'ordinateur et ensuite sur Android.

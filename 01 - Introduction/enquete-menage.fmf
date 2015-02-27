@@ -13,16 +13,20 @@ File=.\enquete-menage.dcf
 Name=FORM000
 Label=(Id Items)
 Level=1
-Size=648,597
+Size=787,597
   
 Item=PROVINCE
 Item=DISTRICT
 Item=UNITE_PRIMAIRE_DE_SONDAGE
 Item=NUMERO_DE_MENAGE
 Item=NOMBRE_DE_PIECES
-Item=NATURE_DES_MURS
 Item=POPULATION000
 Item=NOMBRE_DE_PERSONNES
+Item=NOMBRE_DE_PIECES_DORMIR
+Item=NATURE_DES_MURS
+Item=JOUR_INTERVIEW
+Item=MOIS_INTERVIEW
+Item=ANEE_INTERVIEW
   
 [EndForm]
   
@@ -40,71 +44,119 @@ Max=1
   
 [Field]
 Name=PROVINCE
-Position=309,36,324,56
+Position=309,10,324,30
 Item=PROVINCE,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,39,107,55
+Position=51,13,107,29
 Text=Province
  
   
 [Field]
 Name=DISTRICT
-Position=309,67,338,87
+Position=309,36,338,56
 Item=DISTRICT,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,70,94,86
+Position=51,39,94,55
 Text=District
  
   
 [Field]
 Name=UNITE_PRIMAIRE_DE_SONDAGE
-Position=309,98,352,118
+Position=309,62,352,82
 Item=UNITE_PRIMAIRE_DE_SONDAGE,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,100,220,116
+Position=51,65,220,81
 Text=Unité primaire de sondage
  
   
 [Field]
 Name=NUMERO_DE_MENAGE
-Position=309,129,352,149
+Position=309,88,352,108
 Item=NUMERO_DE_MENAGE,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,130,177,146
+Position=51,91,177,107
 Text=Numéro de ménage
  
   
 [Field]
+Name=JOUR_INTERVIEW
+Position=309,115,338,135
+Item=JOUR_INTERVIEW,ENQUETE_MENAGE_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=51,117,169,133
+Text=Jour de l'interview
+ 
+  
+[Field]
+Name=MOIS_INTERVIEW
+Position=502,119,531,139
+Item=MOIS_INTERVIEW,ENQUETE_MENAGE_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=370,121,489,137
+Text=Mois de l'interview
+ 
+  
+[Field]
+Name=ANEE_INTERVIEW
+Position=705,119,762,139
+Item=ANEE_INTERVIEW,ENQUETE_MENAGE_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=575,122,698,138
+Text=Anée de l'interview
+ 
+  
+[Field]
 Name=NOMBRE_DE_PIECES
-Position=309,160,338,180
+Position=309,142,338,162
 Item=NOMBRE_DE_PIECES,ENQUETE_MENAGE_DICT
 DataCaptureType=ComboBox
 Form=1
   
 [Text]
-Position=51,161,166,177
+Position=51,144,166,160
 Text=Nombre de pièces
  
   
 [Field]
+Name=NOMBRE_DE_PIECES_DORMIR
+Position=309,169,338,189
+Item=NOMBRE_DE_PIECES_DORMIR,ENQUETE_MENAGE_DICT
+DataCaptureType=ComboBox
+Form=1
+  
+[Text]
+Position=51,171,245,187
+Text=Nombre de pièces pour dormir
+ 
+  
+[Field]
 Name=NATURE_DES_MURS
-Position=309,191,324,211
+Position=309,196,324,216
 Item=NATURE_DES_MURS,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,192,154,208
-Text=Nature des murs
+Position=51,198,154,214
+Text=Natures des mur
  
   
 [Field]

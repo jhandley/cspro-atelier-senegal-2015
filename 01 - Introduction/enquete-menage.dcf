@@ -53,12 +53,96 @@ Len=3
 Label=Habitation
 Name=HABITATION
 RecordTypeValue='H'
-RecordLen=15
+RecordLen=25
+
+[Item]
+Label=Date de l'interview
+Name=DATE_INTERVIEW
+Start=11
+Len=8
+
+[Item]
+Label=Jour de l'interview
+Name=JOUR_INTERVIEW
+Start=11
+Len=2
+ItemType=SubItem
+
+[ValueSet]
+Label=Jour de l'interview
+Name=JOUR_INTERVIEW_VS1
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+
+[Item]
+Label=Mois de l'interview
+Name=MOIS_INTERVIEW
+Start=13
+Len=2
+ItemType=SubItem
+
+[ValueSet]
+Label=Mois de l'interview
+Name=MOIS_INTERVIEW_VS1
+Value=1;janvier
+Value=2;février
+Value=3;mars
+Value=4;avril
+Value=5;mai
+Value=6;juin
+Value=7;juillet
+Value=8;août
+Value=9;septembre
+Value=10;octobre
+Value=11;novembre
+Value=12;décembre
+
+[Item]
+Label=Anée de l'interview
+Name=ANEE_INTERVIEW
+Start=15
+Len=4
+ItemType=SubItem
+
+[ValueSet]
+Label=Anée de l'interview
+Name=ANEE_INTERVIEW_VS1
+Value=2015;2015
+Value=2016;2016
 
 [Item]
 Label=Nombre de pièces
 Name=NOMBRE_DE_PIECES
-Start=11
+Start=19
 Len=2
 
 [ValueSet]
@@ -67,13 +151,24 @@ Name=NOMBRE_DE_PIECES_VS1
 Value=1:20;Valide
 
 [Item]
-Label=Nature des murs
+Label=Nombre de pièces pour dormir
+Name=NOMBRE_DE_PIECES_DORMIR
+Start=21
+Len=2
+
+[ValueSet]
+Label=Nombre de pièces pour dormir
+Name=NOMBRE_DE_PIECES_DORMIR_VS1
+Value=1:20;Valide
+
+[Item]
+Label=Nature des mur
 Name=NATURE_DES_MURS
-Start=13
+Start=23
 Len=1
 
 [ValueSet]
-Label=Nature des murs
+Label=Nature des mur
 Name=NATURE_DES_MURS_VS1
 Value=1;Dur
 Value=2;Tôle
@@ -84,7 +179,7 @@ Value=5;Feuilles
 [Item]
 Label=Nombre de personnes dans le menage
 Name=NOMBRE_DE_PERSONNES
-Start=14
+Start=24
 Len=2
 
 [Record]
