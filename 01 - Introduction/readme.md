@@ -1,5 +1,12 @@
 ﻿Introduction
 ============
+Une introduction au développement de l'application de saisie avec CSPro
+
+Dans ce leçon nous apprendrons comment:
+* Créer une application de saisie simple avec CSPro avec un dictionnaire de données et des formulaires
+* Tester l'application de saisie sur l'ordinateur Windows
+* Tester l'application de saisie sur la tablette Android
+* Comprendre la structure du fichier de données
 
 Qu’est-ce que CSPro?
 --------------------
@@ -126,12 +133,13 @@ Items et Subitems
 * Glisser-déposer jour, mois et année sur la formulaire et vérifier en faisant la saisie
 
 Exercices
---------------------
+---------
+
 * Ajouter les variables suivantes au dictionnaire et à la formulaire:
-	1 Nature du toit, après nature des murs, (Béton armé, Béton traditionnel, Tôle, Paille, ou Autre)
-	2 Statut d'occupation, après nature du toit (Propriétaire, Locataire, Location terre, A titre gracieux, Logement de fonction)
-	3 Montant du loyer, après statut d'occupation, (moins de 25 000, 25 000 - 49 999, 50 000 - 99 999, 100 000 - 199 999, 200 000 ou plus) 
-	4 Lien de parenté avec le chef de ménage (Chef, Époux/Épouse, Fils/Fille, Mère/Père, Autre relation, Sans lien de parenté)
-	5 État matrimonial (Célibataire, Marié(e), Divorcé(e), Veuf/Veuve)
-	6 Nombre d'enfants nés vivants (0 à 12)
+  1. Nature du toit, après nature des murs, (Béton armé, Béton traditionnel, Tôle, Paille, ou Autre)
+  2. Statut d'occupation, après nature du toit (Propriétaire, Locataire, Location terre, A titre gracieux, Logement de fonction)
+  3. Montant du loyer, après statut d'occupation, (moins de 25 000, 25 000 - 49 999, 50 000 - 99 999, 100 000 - 199 999, 200 000 ou plus) 
+  4. Lien de parenté avec le chef de ménage (Chef, Époux/Épouse, Fils/Fille, Mère/Père, Autre relation, Sans lien de parenté)
+  5. État matrimonial (Célibataire, Marié(e), Divorcé(e), Veuf/Veuve)
+  6. Nombre d'enfants nés vivants (0 à 12)
 * Tester chacun vos additions sur l'ordinateur et ensuite sur Android.
