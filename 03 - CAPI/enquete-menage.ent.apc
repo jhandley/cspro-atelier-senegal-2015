@@ -25,10 +25,16 @@ PROC STATUT_OCCUPATION
 
 // Sauter loyer si ce n'est pas en location
 if not STATUT_OCCUPATION in 2:3 then
-	skip to POPULATION000;
+	skip to MODE_APPROVISIONNEMENT_EAU;
 endif
-PROC MONTANT_DU_LOYER
+PROC MODE_APPROVISIONNEMENT_EAU
 
+// sauter distance d'approvisionnement si mode 
+// d'approvisionnement est Eau courante à domicile 
+// ou Citerne privée.
+if MODE_APPROVISIONNEMENT_EAU in 1,3 then
+	skip to POPULATION000;
+endif;
 PROC POPULATION000
 
 numeric nombrePersonnes = totocc(POPULATION000);

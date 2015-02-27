@@ -13,7 +13,7 @@ File=.\enquete-menage.dcf
 Name=FORM000
 Label=(Id Items)
 Level=1
-Size=987,644
+Size=988,682
   
 Item=PROVINCE
 Item=DISTRICT
@@ -30,6 +30,8 @@ Item=NATURE_DU_TOIT
 Item=STATUT_OCCUPATION
 Item=MONTANT_DU_LOYER
 Item=HEURE_INTERVIEW
+Item=MODE_APPROVISIONNEMENT_EAU
+Item=DISTANCE_APPROVISIONNEMENT_EAU
   
 [EndForm]
   
@@ -47,7 +49,7 @@ Max=1
   
 [Field]
 Name=PROVINCE
-Position=309,10,324,30
+Position=308,10,323,30
 Item=PROVINCE,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
@@ -59,46 +61,46 @@ Text=Province
   
 [Field]
 Name=DISTRICT
-Position=309,33,338,53
+Position=308,32,337,52
 Item=DISTRICT,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,31,94,47
+Position=51,30,94,46
 Text=District
  
   
 [Field]
 Name=UNITE_PRIMAIRE_DE_SONDAGE
-Position=309,56,352,76
+Position=308,54,351,74
 Item=UNITE_PRIMAIRE_DE_SONDAGE,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,54,220,70
+Position=51,53,220,69
 Text=Unité primaire de sondage
  
   
 [Field]
 Name=NUMERO_DE_MENAGE
-Position=309,79,352,99
+Position=308,76,351,96
 Item=NUMERO_DE_MENAGE,ENQUETE_MENAGE_DICT
 Form=1
   
 [Text]
-Position=51,77,177,93
+Position=51,76,177,92
 Text=Numéro de ménage
  
   
 [Field]
 Name=JOUR_INTERVIEW
-Position=309,102,338,122
+Position=308,98,337,118
 Item=JOUR_INTERVIEW,ENQUETE_MENAGE_DICT
 Protected=Yes
 Form=1
   
 [Text]
-Position=51,100,169,116
+Position=51,99,169,115
 Text=Jour de l'interview
  
   
@@ -128,86 +130,110 @@ Text=Anée de l'interview
   
 [Field]
 Name=HEURE_INTERVIEW
-Position=309,125,394,145
+Position=308,120,393,140
 Item=HEURE_INTERVIEW,ENQUETE_MENAGE_DICT
 Protected=Yes
 Form=1
   
 [Text]
-Position=51,124,179,140
+Position=51,122,179,138
 Text=Heure de l'interview
  
   
 [Field]
 Name=NOMBRE_DE_PIECES
-Position=309,148,338,168
+Position=308,142,337,162
 Item=NOMBRE_DE_PIECES,ENQUETE_MENAGE_DICT
 DataCaptureType=ComboBox
 Form=1
   
 [Text]
-Position=51,148,166,164
+Position=51,145,166,161
 Text=Nombre de pièces
  
   
 [Field]
 Name=NOMBRE_DE_PIECES_DORMIR
-Position=309,171,338,191
+Position=308,165,337,185
 Item=NOMBRE_DE_PIECES_DORMIR,ENQUETE_MENAGE_DICT
 DataCaptureType=ComboBox
 Form=1
   
 [Text]
-Position=51,172,245,188
+Position=51,168,245,184
 Text=Nombre de pièces pour dormir
  
   
 [Field]
 Name=NATURE_DES_MURS
-Position=309,194,324,214
+Position=308,188,323,208
 Item=NATURE_DES_MURS,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,196,154,212
+Position=51,191,154,207
 Text=Natures des mur
  
   
 [Field]
 Name=NATURE_DU_TOIT
-Position=309,217,324,237
+Position=308,211,323,231
 Item=NATURE_DU_TOIT,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,220,137,236
+Position=51,214,137,230
 Text=Nature du toit
  
   
 [Field]
 Name=STATUT_OCCUPATION
-Position=309,240,324,260
+Position=308,234,323,254
 Item=STATUT_OCCUPATION,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,244,173,260
+Position=51,237,173,253
 Text=Statut d'occupation
  
   
 [Field]
 Name=MONTANT_DU_LOYER
-Position=309,263,324,283
+Position=308,257,323,277
 Item=MONTANT_DU_LOYER,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,268,158,284
+Position=51,260,158,276
 Text=Montant du loyer
+ 
+  
+[Field]
+Name=MODE_APPROVISIONNEMENT_EAU
+Position=308,280,323,300
+Item=MODE_APPROVISIONNEMENT_EAU,ENQUETE_MENAGE_DICT
+DataCaptureType=RadioButton
+Form=1
+  
+[Text]
+Position=51,283,271,299
+Text=Mode d'approvisionnement en eau
+ 
+  
+[Field]
+Name=DISTANCE_APPROVISIONNEMENT_EAU
+Position=308,303,351,323
+Item=DISTANCE_APPROVISIONNEMENT_EAU,ENQUETE_MENAGE_DICT
+DataCaptureType=ComboBox
+Form=1
+  
+[Text]
+Position=51,306,290,322
+Text=Distance d'approvisionnement en eau
  
   
 [Grid]
@@ -218,7 +244,7 @@ Required=No
 Type=Record
 TypeName=POPULATION
 Max=999
-DisplaySize=50,299,962,619
+DisplaySize=51,337,963,657
 Orientation=Horizontal
 FieldRowHeight=0
 HeadingRowHeight=0

@@ -53,7 +53,7 @@ Len=3
 Label=Habitation
 Name=HABITATION
 RecordTypeValue='H'
-RecordLen=32
+RecordLen=36
 
 [Item]
 Label=Heure de l'interview
@@ -227,6 +227,36 @@ Value=3;50 000 - 99 999
 Value=4;100 000 - 199 999
 Value=5;200 000 ou plus
 Value=9;inconnu
+Name=MISSING,Special
+
+[Item]
+Label=Mode d'approvisionnement en eau
+Name=MODE_APPROVISIONNEMENT_EAU
+Start=33
+Len=1
+
+[ValueSet]
+Label=Mode d'approvisionnement en eau
+Name=MODE_APPROVISIONNEMENT_EAU_VS1
+Value=1;Eau courante à domicile
+Value=2;Eau courante chez le voisin
+Value=3;Citerne privée
+Value=4;Fontaine publique
+Value=5;Citerne publique
+Value=6;Forage/puits
+Value=7;Rivière/Source
+
+[Item]
+Label=Distance d'approvisionnement en eau
+Name=DISTANCE_APPROVISIONNEMENT_EAU
+Start=34
+Len=3
+
+[ValueSet]
+Label=Distance d'approvisionnement en eau
+Name=DISTANCE_APPROVISIONNEMENT_EAV
+Value=0:998;distance en mètres
+Value=999;inconnu
 Name=MISSING,Special
 
 [Record]
