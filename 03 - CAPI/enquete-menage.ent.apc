@@ -73,6 +73,17 @@ if nombrePersonnes > 0 then
 		endif;
 	enddo;
 	
+	// Afficher un message d'erreur si le chef du ménage a au moins 
+	// un époux/une épouse dans le ménage et son état matrimoniale 
+	// n'est pas mariée.
+	if ETAT_MATRIMONIAL(indexChef) in 1,4 then
+		numeric nombreEpoux = count(POPULATION where LIEN_DE_PARENTE = 2);
+		if nombreEpoux >= 1 then
+			errmsg("L'état matrimonial du chef de ménage n'est pas marié mais il y a un èpoux/une èpouse du chef")
+			  select("Corriger l'état matrimonial du chef", ETAT_MATRIMONIAL(indexChef),
+			  		 "Corriger le lien de paranté de l'époux/l'épouse", LIEN_DE_PARENTE(SEEK(LIEN_DE_PARENTE = 2)));
+		endif;
+	endif;
 endif;
 
 	
