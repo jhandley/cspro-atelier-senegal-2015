@@ -1,0 +1,315 @@
+﻿[Dictionary]
+Version=CSPro 6.0
+Label=enquete-menage
+Name=ENQUETE_MENAGE_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+
+[Level]
+Label=enquete-menage questionnaire
+Name=ENQUETE_MENAGE_QUEST
+
+[IdItems]
+
+[Item]
+Label=Province
+Name=PROVINCE
+Start=2
+Len=1
+
+[ValueSet]
+Label=Province
+Name=PROVINCE_VS1
+Value=1;Blain
+Value=2;Brung
+Value=3;Clara
+Value=4;Doibne
+Value=5;Morendine
+Value=6;Morice
+Value=7;Vagor
+
+[Item]
+Label=District
+Name=DISTRICT
+Start=3
+Len=2
+
+[Item]
+Label=Unité primaire de sondage
+Name=UNITE_PRIMAIRE_DE_SONDAGE
+Start=5
+Len=3
+
+[Item]
+Label=Numéro de ménage
+Name=NUMERO_DE_MENAGE
+Start=8
+Len=3
+
+[Record]
+Label=Habitation
+Name=HABITATION
+RecordTypeValue='H'
+RecordLen=26
+
+[Item]
+Label=Date de l'interview
+Name=DATE_INTERVIEW
+Start=11
+Len=8
+
+[Item]
+Label=Jour de l'interview
+Name=JOUR_INTERVIEW
+Start=11
+Len=2
+ItemType=SubItem
+
+[ValueSet]
+Label=Jour de l'interview
+Name=JOUR_INTERVIEW_VS1
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
+Value=13;13
+Value=14;14
+Value=15;15
+Value=16;16
+Value=17;17
+Value=18;18
+Value=19;19
+Value=20;20
+Value=21;21
+Value=22;22
+Value=23;23
+Value=24;24
+Value=25;25
+Value=26;26
+Value=27;27
+Value=28;28
+Value=29;29
+Value=30;30
+Value=31;31
+
+[Item]
+Label=Mois de l'interview
+Name=MOIS_INTERVIEW
+Start=13
+Len=2
+ItemType=SubItem
+
+[ValueSet]
+Label=Mois de l'interview
+Name=MOIS_INTERVIEW_VS1
+Value=1;janvier
+Value=2;février
+Value=3;mars
+Value=4;avril
+Value=5;mai
+Value=6;juin
+Value=7;juillet
+Value=8;août
+Value=9;septembre
+Value=10;octobre
+Value=11;novembre
+Value=12;décembre
+
+[Item]
+Label=Anée de l'interview
+Name=ANEE_INTERVIEW
+Start=15
+Len=4
+ItemType=SubItem
+
+[ValueSet]
+Label=Anée de l'interview
+Name=ANEE_INTERVIEW_VS1
+Value=2015;2015
+Value=2016;2016
+
+[Item]
+Label=Nombre de pièces
+Name=NOMBRE_DE_PIECES
+Start=19
+Len=2
+
+[ValueSet]
+Label=Nombre de pièces
+Name=NOMBRE_DE_PIECES_VS1
+Value=1:20;Valide
+
+[Item]
+Label=Nombre de pièces pour dormir
+Name=NOMBRE_DE_PIECES_DORMIR
+Start=21
+Len=2
+
+[ValueSet]
+Label=Nombre de pièces pour dormir
+Name=NOMBRE_DE_PIECES_DORMIR_VS1
+Value=1:20;Valide
+
+[Item]
+Label=Nature des mur
+Name=NATURE_DES_MURS
+Start=23
+Len=1
+
+[ValueSet]
+Label=Nature des mur
+Name=NATURE_DES_MURS_VS1
+Value=1;Dur
+Value=2;Tôle
+Value=3;Bois
+Value=4;Pisé
+Value=5;Feuilles
+
+[Item]
+Label=Nature du toit
+Name=NATURE_DU_TOIT
+Start=24
+Len=1
+
+[ValueSet]
+Label=Nature du toit
+Name=NATURE_DU_TOIT_VS1
+Value=1;Béton armé
+Value=2;Béton traditionnel
+Value=3;Tôle
+Value=4;Paille
+Value=5;Autre
+
+[Item]
+Label=Statut d'occupation
+Name=STATUT_OCCUPATION
+Start=25
+Len=1
+
+[ValueSet]
+Label=Statut d'occupation
+Name=STATUT_OCCUPATION_VS1
+Value=1;Propriétaire
+Value=2;Locataire
+Value=3;Location terre
+Value=4;A titre gracieux
+Value=5;Logement de fonction
+
+[Item]
+Label=Montant du loyer
+Name=MONTANT_DU_LOYER
+Start=26
+Len=1
+
+[ValueSet]
+Label=Montant du loyer
+Name=MONTANT_DU_LOYER_VS1
+Value=1;moins de 25 000
+Value=2;25 000 - 49 999
+Value=3;50 000 - 99 999
+Value=4;100 000 - 199 999
+Value=5;200 000 ou plus
+Value=9;inconnu
+Name=MISSING,Special
+
+[Record]
+Label=Population
+Name=POPULATION
+RecordTypeValue='P'
+Required=No
+MaxRecords=999
+RecordLen=48
+
+[Item]
+Label=Nom et prénom
+Name=NOM_ET_PRENOM
+Start=11
+Len=30
+DataType=Alpha
+
+[Item]
+Label=Sexe
+Name=SEXE
+Start=41
+Len=1
+
+[ValueSet]
+Label=Sexe
+Name=SEXE_VS1
+Value=1;Masculin
+Value=2;Feminin
+
+[Item]
+Label=Age
+Name=AGE
+Start=42
+Len=3
+
+[ValueSet]
+Label=Age
+Name=AGE_VS1
+Value=0:120;Valide
+
+[Item]
+Label=Lien de parenté
+Name=LIEN_DE_PARENTE
+Start=45
+Len=1
+
+[ValueSet]
+Label=Lien de parenté
+Name=LIEN_DE_PARENTE_VS1
+Value=1;Chef
+Value=2;Époux/Épouse
+Value=3;Fils/Fille
+Value=4;Mère/Père
+Value=5;Autre relation
+Value=6;Sans lien de parenté
+
+[Item]
+Label=État matrimonial
+Name=ETAT_MATRIMONIAL
+Start=46
+Len=1
+
+[ValueSet]
+Label=État matrimonial
+Name=ETAT_MATRIMONIAL_VS1
+Value=1;Célibataire
+Value=2;Marié(e)
+Value=3;Divorcé(e)
+Value=4;Veuf/Veuve
+
+[Item]
+Label=Nombre d'enfants nés vivants
+Name=NOMBRE_ENFANTS_NES_VIVANTS
+Start=47
+Len=2
+
+[ValueSet]
+Label=Nombre d'enfants nés vivants
+Name=NOMBRE_ENFANTS_NES_VIVANTS_VS1
+Value=0;0
+Value=1;1
+Value=2;2
+Value=3;3
+Value=4;4
+Value=5;5
+Value=6;6
+Value=7;7
+Value=8;8
+Value=9;9
+Value=10;10
+Value=11;11
+Value=12;12
