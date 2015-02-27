@@ -101,3 +101,9 @@ endif;
 if AGE < 12 then
 	skip to next;
 endif
+PROC ETAT_MATRIMONIAL
+
+// Sauter le nombre d'enfants nés vivants pour les hommes
+if SEXE = 1 then
+	skip to next;
+endif;
