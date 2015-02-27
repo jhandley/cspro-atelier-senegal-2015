@@ -95,6 +95,10 @@ if LIEN_DE_PARENTE = 1 and AGE < 12 then
 	errmsg("Le chef du ménage a %d ans mais l'âge minimum est 12", AGE)
 		select("Corriger age", AGE, "Corriger lien de parenté", LIEN_DE_PARENTE);
 endif;
+if LIEN_DE_PARENTE = 2 and AGE < 12 then
+	errmsg("L'époux/épouse du chef du ménage a %d ans mais l'âge minimum est 12", AGE)
+		select("Corriger age", AGE, "Corriger lien de parenté", LIEN_DE_PARENTE);
+endif;
 
 // Sauter état matrimonial et nombres d'enfants nés vivants pour les
 // individus de moins de 12 ans
