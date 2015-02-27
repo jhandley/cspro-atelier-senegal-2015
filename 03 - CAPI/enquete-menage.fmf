@@ -29,6 +29,7 @@ Item=ANEE_INTERVIEW
 Item=NATURE_DU_TOIT
 Item=STATUT_OCCUPATION
 Item=MONTANT_DU_LOYER
+Item=HEURE_INTERVIEW
   
 [EndForm]
   
@@ -126,74 +127,86 @@ Text=Anée de l'interview
  
   
 [Field]
+Name=HEURE_INTERVIEW
+Position=309,125,394,145
+Item=HEURE_INTERVIEW,ENQUETE_MENAGE_DICT
+Protected=Yes
+Form=1
+  
+[Text]
+Position=51,124,179,140
+Text=Heure de l'interview
+ 
+  
+[Field]
 Name=NOMBRE_DE_PIECES
-Position=309,125,338,145
+Position=309,148,338,168
 Item=NOMBRE_DE_PIECES,ENQUETE_MENAGE_DICT
 DataCaptureType=ComboBox
 Form=1
   
 [Text]
-Position=51,123,166,139
+Position=51,148,166,164
 Text=Nombre de pièces
  
   
 [Field]
 Name=NOMBRE_DE_PIECES_DORMIR
-Position=309,148,338,168
+Position=309,171,338,191
 Item=NOMBRE_DE_PIECES_DORMIR,ENQUETE_MENAGE_DICT
 DataCaptureType=ComboBox
 Form=1
   
 [Text]
-Position=51,146,245,162
+Position=51,172,245,188
 Text=Nombre de pièces pour dormir
  
   
 [Field]
 Name=NATURE_DES_MURS
-Position=309,171,324,191
+Position=309,194,324,214
 Item=NATURE_DES_MURS,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,169,154,185
+Position=51,196,154,212
 Text=Natures des mur
  
   
 [Field]
 Name=NATURE_DU_TOIT
-Position=309,194,324,214
+Position=309,217,324,237
 Item=NATURE_DU_TOIT,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,192,137,208
+Position=51,220,137,236
 Text=Nature du toit
  
   
 [Field]
 Name=STATUT_OCCUPATION
-Position=309,217,324,237
+Position=309,240,324,260
 Item=STATUT_OCCUPATION,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,215,173,231
+Position=51,244,173,260
 Text=Statut d'occupation
  
   
 [Field]
 Name=MONTANT_DU_LOYER
-Position=309,240,324,260
+Position=309,263,324,283
 Item=MONTANT_DU_LOYER,ENQUETE_MENAGE_DICT
 DataCaptureType=RadioButton
 Form=1
   
 [Text]
-Position=51,239,158,255
+Position=51,268,158,284
 Text=Montant du loyer
  
   

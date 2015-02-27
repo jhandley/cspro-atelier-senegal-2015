@@ -9,6 +9,9 @@ PROC JOUR_INTERVIEW
 preproc
 DATE_INTERVIEW = sysdate("DDMMYYYY");
 
+PROC HEURE_INTERVIEW
+preproc
+HEURE_INTERVIEW = systime();
 PROC NOMBRE_DE_PIECES_DORMIR
 
 // Contrôler nombre de pieces pour dormir et nombre de pieces

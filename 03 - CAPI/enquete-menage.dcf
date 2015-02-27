@@ -53,18 +53,24 @@ Len=3
 Label=Habitation
 Name=HABITATION
 RecordTypeValue='H'
-RecordLen=26
+RecordLen=32
+
+[Item]
+Label=Heure de l'interview
+Name=HEURE_INTERVIEW
+Start=11
+Len=6
 
 [Item]
 Label=Date de l'interview
 Name=DATE_INTERVIEW
-Start=11
+Start=17
 Len=8
 
 [Item]
 Label=Jour de l'interview
 Name=JOUR_INTERVIEW
-Start=11
+Start=17
 Len=2
 ItemType=SubItem
 
@@ -106,7 +112,7 @@ Value=31;31
 [Item]
 Label=Mois de l'interview
 Name=MOIS_INTERVIEW
-Start=13
+Start=19
 Len=2
 ItemType=SubItem
 
@@ -129,7 +135,7 @@ Value=12;décembre
 [Item]
 Label=Anée de l'interview
 Name=ANEE_INTERVIEW
-Start=15
+Start=21
 Len=4
 ItemType=SubItem
 
@@ -142,7 +148,7 @@ Value=2016;2016
 [Item]
 Label=Nombre de pièces
 Name=NOMBRE_DE_PIECES
-Start=19
+Start=25
 Len=2
 
 [ValueSet]
@@ -153,7 +159,7 @@ Value=1:20;Valide
 [Item]
 Label=Nombre de pièces pour dormir
 Name=NOMBRE_DE_PIECES_DORMIR
-Start=21
+Start=27
 Len=2
 
 [ValueSet]
@@ -164,7 +170,7 @@ Value=1:20;Valide
 [Item]
 Label=Nature des mur
 Name=NATURE_DES_MURS
-Start=23
+Start=29
 Len=1
 
 [ValueSet]
@@ -179,7 +185,7 @@ Value=5;Feuilles
 [Item]
 Label=Nature du toit
 Name=NATURE_DU_TOIT
-Start=24
+Start=30
 Len=1
 
 [ValueSet]
@@ -194,7 +200,7 @@ Value=5;Autre
 [Item]
 Label=Statut d'occupation
 Name=STATUT_OCCUPATION
-Start=25
+Start=31
 Len=1
 
 [ValueSet]
@@ -209,7 +215,7 @@ Value=5;Logement de fonction
 [Item]
 Label=Montant du loyer
 Name=MONTANT_DU_LOYER
-Start=26
+Start=32
 Len=1
 
 [ValueSet]
