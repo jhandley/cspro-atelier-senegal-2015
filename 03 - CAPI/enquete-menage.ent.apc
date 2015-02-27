@@ -107,6 +107,15 @@ if AGE < 12 then
 endif
 PROC ETAT_MATRIMONIAL
 
+// assurer que l'état matrimoniale de l'époux/épouse du chef 
+// n'est pas célibataire ou veuf/veuve
+if LIEN_DE_PARENTE = 2 and ETAT_MATRIMONIAL in 1,4 then
+	errmsg("L'époux/epouse du chef ne peut pas être celibataire ou veuf/veuve")
+		select("Corriger l'état matrimoniale", ETAT_MATRIMONIAL,
+			   "Corriger le lien de parenté", LIEN_DE_PARENTE);
+endif;
+
+
 // Sauter le nombre d'enfants nés vivants pour les hommes
 if SEXE = 1 then
 	skip to next;
