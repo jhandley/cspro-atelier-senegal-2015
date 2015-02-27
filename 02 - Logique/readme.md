@@ -16,8 +16,10 @@ Dans ce leçon nous apprendrons comment:
 La fonction errmsg
 -----------------------------------
 Dans notre exemple il est possible de mettre un nombre de pièces pour dormir qui dépasse le nombre de pièces total. Ajoutons un message d'erreur dans ce cas.
-* Cliquer sur nombre de pièces pour dormir dans l'arborescence de la formulaire et puis sur *Logic* dans la barre d'outils 
-* Ajouter le code suivant au procédure du champs NOMBRE_DE_PIECES_DORMIR:
+
+Cliquer sur nombre de pièces pour dormir dans l'arborescence de la formulaire et puis sur *Logic* dans la barre d'outils 
+
+Ajouter le code suivant au procédure du champs NOMBRE_DE_PIECES_DORMIR:
 
 ```
 PROC NOMBRE_DE_PIECES_DORMIR
@@ -28,7 +30,7 @@ if NOMBRE_DE_PIECES_DORMIR > NOMBRE_DE_PIECES then
 endif
 ```
 
-* Il est possible d'insérer des valeurs dans le message en ajoutant %d (%s pour les alpha)
+Il est possible d'insérer des valeurs dans le message en ajoutant %d (%s pour les alpha)
 
 ```
 PROC NOMBRE_DE_PIECES_DORMIR
@@ -40,7 +42,7 @@ if NOMBRE_DE_PIECES_DORMIR > NOMBRE_DE_PIECES then
 endif
 ```
 
-* En ajoutant *select* on donne l'option de revenir sur un autre champ:
+En ajoutant *select* on donne l'option de revenir sur un autre champ:
 
 ```
 PROC NOMBRE_DE_PIECES_DORMIR
@@ -54,7 +56,8 @@ endif
 ```
 Notez qu'avec *select* nous n'avons plus besoin du *reenter*.
 
-* Prenons un autre exemple: afficher un message si le chef du ménage est âgé de moins de 12 ans.
+Prenons un autre exemple: afficher un message si le chef du ménage est âgé de moins de 12 ans.
+
 ```
 if LIEN_DE_PARENTE = 1 and AGE < 12 then
 	errmsg("Le chef du ménage a %d ans mais l'âge minimum est 12", AGE)
@@ -62,12 +65,13 @@ if LIEN_DE_PARENTE = 1 and AGE < 12 then
 endif
 ```
 
-* Dans la commande *if* *then* on peut combiner plusieurs conditions avec *and* et *or*
+Dans la commande *if* *then* on peut combiner plusieurs conditions avec *and* et *or*
 
 Postproc et preproc
 -------------------
-* Dans nos exemples la logique est exécuté après la saisie de la variable. On peut aussi exécuter de la logique avant, dans le *preproc*
-* Remplissons automatiquement la date de l'interview dans le preproc
+Dans nos exemples la logique est exécuté après la saisie de la variable. On peut aussi exécuter de la logique avant, dans le *preproc*
+
+Remplissons automatiquement la date de l'interview dans le preproc
 
 ```
 PROC JOUR_INTERVIEW
@@ -75,7 +79,7 @@ preproc
 DATE_INTERVIEW = sysdate("DDMMYYYY");
 ```
 
-* Ajoutons *noinput* pour éviter la saisie de la date
+Ajoutons *noinput* pour éviter la saisie de la date
 
 ```
 PROC JOUR_INTERVIEW
@@ -91,11 +95,11 @@ PROC ANEE_INTERVIEW
 preproc
 noinput;
 ```
-* Ou bien on peut changer ces champs en *protected* (protégées). Dans ce cas on n'a plus besoin de *noinput*.
+Ou bien on peut changer ces champs en *protected* (protégées). Dans ce cas on n'a plus besoin de *noinput*.
 
 Sauts
 ------
-* Sauter le montant de loyer si le statut d'occupation n'est pas égal à "locataire" ou "location terre"
+Sauter le montant de loyer si le statut d'occupation n'est pas égal à "locataire" ou "location terre"
 
 ```
 PROC STATUT_OCCUPATION
@@ -105,8 +109,8 @@ if not STATUT_OCCUPATION in 2:3 then
 endif
 ```
 
-* Noter qu'après avoir sauté montant de loyer, on ne peut pas y revenir en faisant marche arrière  
-* Si l'individu a moins de 12 ans sauter état matrimonial et nombres d'enfants nés vivants
+Noter qu'après avoir sauté montant de loyer, on ne peut pas y revenir en faisant marche arrière  
+Si l'individu a moins de 12 ans sauter état matrimonial et nombres d'enfants nés vivants
 
 ```
 if AGE < 12 then
@@ -114,13 +118,13 @@ if AGE < 12 then
 endif
 ```
 
-* Noter qu'on utilise `skip to next` au lieu de `skip to NOM_ET_PRENOM`
-* Lorsque le champ est sauté les procs du champs ne sont pas exécutés
+Noter qu'on utilise `skip to next` au lieu de `skip to NOM_ET_PRENOM`
+Lorsque le champ est sauté les procs du champs ne sont pas exécutés
 
 Les commandes *accept*, *endgroup* et *endlevel*
 ------------------------------------------------
 
-* A lieu de demander le nombre de personnes dans le ménage nous pouvons terminer le roster lorsque le nom de la personne est blanc. N'oublier pas d'enlever le "roster control field".
+A lieu de demander le nombre de personnes dans le ménage nous pouvons terminer le roster lorsque le nom de la personne est blanc. N'oublier pas d'enlever le "roster control field".
 
 ```
 PROC NOM_ET_PRENOM
@@ -130,8 +134,8 @@ if NOM_ET_PRENOM = "" then
 endif;
 ```
 
-* Nous pouvons également utiliser *endlevel* comme le groupe (le roster) est à la fin du questionnaire.
-* Utiliser la fonction *accept* pour vérifier qu'on veut vraiment terminer et ce n'est pas un erreur de saisie.
+Nous pouvons également utiliser *endlevel* comme le groupe (le roster) est à la fin du questionnaire.
+Utiliser la fonction *accept* pour vérifier qu'on veut vraiment terminer et ce n'est pas un erreur de saisie.
 
 ```
 PROC NOM_ET_PRENOM
@@ -147,7 +151,7 @@ endif;
 
 Blancs et Inconnus
 ------------------
-* La valeur d'une variable sautée est *notappl* (blanc). Ajouter le code suivant au preproc du nom et prénom. Tester en saisissant des valeurs différentes pour statut d'occupation.  
+La valeur d'une variable sautée est *notappl* (blanc). Ajouter le code suivant au preproc du nom et prénom. Tester en saisissant des valeurs différentes pour statut d'occupation.  
 
 ```
 if MONTANT_DU_LOYER = notappl then
@@ -157,8 +161,9 @@ else
 endif;
 ```
 
-* Même si on saisie le champ et puis on le saut après, il deviendra *notappl*
-* Même si *notappl* se trouve dans l'ensemble de valeurs, il n'est pas possible de mettre blanc sauf si on utilise la commande *set* *behavior*:
+Même si on saisie le champ et puis on le saut après, il deviendra *notappl*
+
+Même si *notappl* se trouve dans l'ensemble de valeurs, il n'est pas possible de mettre blanc sauf si on utilise la commande *set* *behavior*:
 
 ```
 PROC MONTANT_DU_LOYER
@@ -169,9 +174,9 @@ postproc
 set behavior() canenter(notappl) off;
 ```
 
-* Si on utilise le mode "operator controlled" cela n'est pas nécessaire.
+Si on utilise le mode "operator controlled" cela n'est pas nécessaire.
 
-* Si on n'éteint pas *canenter(notappl)* il sera possible de saisir des blancs pour tous les champs qui suit. Alternativement on peut donner le nom de la variable pour ne pas faire le changement global.
+Si on n'éteint pas *canenter(notappl)* il sera possible de saisir des blancs pour tous les champs qui suit. Alternativement on peut donner le nom de la variable pour ne pas faire le changement global.
 
 ```
 PROC MONTANT_DU_LOYER
@@ -180,7 +185,7 @@ preproc
 set behavior(MONTANT_DU_LOYER) canenter(notappl) on (noconfirm);
 ```
 
-* En plus de *notappl* il y a une autre valeur spéciale *missing* pour les valeurs inconnu. Dans l'ensemble de valeurs on peut ajouter *missing* a une des valeurs. Souvent ces valeurs sont codées avec 9, 99, 999... Dans la logique on peut comparer ces valeurs avec *missing* au lieu de la code numérique.
+En plus de *notappl* il y a une autre valeur spéciale *missing* pour les valeurs inconnu. Dans l'ensemble de valeurs on peut ajouter *missing* a une des valeurs. Souvent ces valeurs sont codées avec 9, 99, 999... Dans la logique on peut comparer ces valeurs avec *missing* au lieu de la code numérique.
  
 ```
 if MONTANT_DU_LOYER = missing then
@@ -192,9 +197,11 @@ endif;
 
 Ordre des procs
 ---------------
-* Dans notre exemple il est possible de saisir un ménage sans chef ou avec deux chefs. Ajouter un contrôle pour l'empêcher. On l'ajoute où?
-* Ce n'est pas seulement les champs qui ont des procs. Le niveau, la formulaire et les rosters ont des procs aussi.
-* Ajouter des errmsg dans le preproc et postproc du niveau, formulaire et le roster pour illustrer l'ordre des procs. Pouvez-vous prévoir l'ordre des messages?
+Dans notre exemple il est possible de saisir un ménage sans chef ou avec deux chefs. Ajouter un contrôle pour l'empêcher. On l'ajoute où?
+
+Ce n'est pas seulement les champs qui ont des procs. Le niveau, la formulaire et les rosters ont des procs aussi.
+
+Ajouter des errmsg dans le preproc et postproc du niveau, formulaire et le roster pour illustrer l'ordre des procs. Pouvez-vous prévoir l'ordre des messages?
 
 ```
 preproc
@@ -204,7 +211,7 @@ postproc
 errmsg("%s postproc", getsymbol());
 ```
 
-* Revenons sur le contrôle du nombre de chefs. On peut le mettre dans le postproc de la groupe POPULATION000 (le roster).
+Revenons sur le contrôle du nombre de chefs. On peut le mettre dans le postproc de la groupe POPULATION000 (le roster).
 
 ```
 PROC POPULATION000
@@ -234,13 +241,13 @@ if nombrePersonnes > 0 then
 endif;
 ```
 
-* Avec la fonction *count* nous pouvons éviter le boucle:
+Avec la fonction *count* nous pouvons éviter le boucle:
 
 ```
 numeric nombreChefs = count(POPULATION000 where LIEN_DE_PARENTE = 1);
 ```
 
-* Ajouter une contrôle pour assurer que le chef du ménage est plus âgée que ses enfants. An ajoute la logique suivante au postproc du roster:
+Ajouter une contrôle pour assurer que le chef du ménage est plus âgée que ses enfants. An ajoute la logique suivante au postproc du roster:
 
 ```
 	// Trouver l'index du chef 
@@ -266,7 +273,7 @@ numeric nombreChefs = count(POPULATION000 where LIEN_DE_PARENTE = 1);
 	enddo;
 ```
 
-* Avec la fonction *seek* on peut enlever le premier boucle:
+Avec la fonction *seek* on peut enlever le premier boucle:
 
 ```
 numeric indexChef = seek(LIEN_DE_PARENTE = 1);
