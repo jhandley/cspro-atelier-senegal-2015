@@ -84,6 +84,18 @@ if nombrePersonnes > 0 then
 			  		 "Corriger le lien de paranté de l'époux/l'épouse", LIEN_DE_PARENTE(SEEK(LIEN_DE_PARENTE = 2)));
 		endif;
 	endif;
+	
+	// Afficher un message d'erreur si le chef du ménage et un son époux/épouse sont de même sexe
+	numeric indexEpouxMemeSexe = SEEK(LIEN_DE_PARENTE = 2 and SEXE = SEXE(indexChef));
+	if indexEpouxMemeSexe <> 0 then
+		errmsg("Le chef de ménage %s et son époux/épouse %s sont tous les deux de sexe %s.",
+				strip(NOM_ET_PRENOM(indexChef)), strip(NOM_ET_PRENOM(indexEpouxMemeSexe)), getlabel(SEXE, SEXE(indexChef)))
+				select("Corriger le sexe de " + strip(NOM_ET_PRENOM(indexEpouxMemeSexe)), SEXE(indexEpouxMemeSexe),
+					   "Corriger le sexe de " + strip(NOM_ET_PRENOM(indexChef)), SEXE(indexChef),
+					   "Corriger le lien de parenté de " + strip(NOM_ET_PRENOM(indexEpouxMemeSexe)), LIEN_DE_PARENTE(indexEpouxMemeSexe),
+					   "Corriger le lien de parenté de " + strip(NOM_ET_PRENOM(indexChef)), LIEN_DE_PARENTE(indexChef));
+	endif;
+	
 endif;
 
 	
